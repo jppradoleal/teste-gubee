@@ -7,10 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Tech {
@@ -18,11 +15,11 @@ public class Tech {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column
+	@Column(name="name")
 	private String name;
 	
 	@ManyToMany(mappedBy = "techs")
-	private List<Product> product;
+	private List<Product> products;
 
 	public Tech() {
 	}
@@ -44,4 +41,13 @@ public class Tech {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> product) {
+		this.products = product;
+	}
+
 }
