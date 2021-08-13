@@ -8,14 +8,14 @@ import io.github.jppradoleal.domain.Product;
 public class ProductDTO {
 	private Long id;
 	private String name;
-	private String descricao;
+	private String description;
 	private List<ProductTargetMarketDTO> targetMarket;
 	private List<ProductTechDTO> techs;
 	
 	public ProductDTO(Product entity) {
 		this.id = entity.getId();
 		this.name = entity.getName();
-		this.descricao = entity.getDescription();
+		this.description = entity.getDescription();
 		this.targetMarket = entity.getTarget().stream().map(e -> new ProductTargetMarketDTO(e)).collect(Collectors.toList());
 		this.techs = entity.getTechs().stream().map(e -> new ProductTechDTO(e)).collect(Collectors.toList());
 	}
@@ -36,12 +36,12 @@ public class ProductDTO {
 		this.name = name;
 	}
 	
-	public String getDescricao() {
-		return descricao;
+	public String getDescription() {
+		return description;
 	}
 	
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setDescription(String descricao) {
+		this.description = descricao;
 	}
 
 	public List<ProductTargetMarketDTO> getTargetMarket() {
