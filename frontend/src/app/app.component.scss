@@ -1,3 +1,20 @@
+nav {
+  display: flex;
+  align-items: center;
+  padding: 0 3rem;
+  background: rgba( 0, 0, 0, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.37 );
+  backdrop-filter: blur( 4.0px );
+  -webkit-backdrop-filter: blur( 4.0px );
+  border-bottom: 1px solid rgba( 255, 255, 255, 0.18 );
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+  }
+}
+
 main {
   max-width: 900px;
   margin: 0 auto;

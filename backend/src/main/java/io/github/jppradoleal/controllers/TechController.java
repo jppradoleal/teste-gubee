@@ -20,7 +20,9 @@ public class TechController {
 	TechService service;
 	
 	@GetMapping()
-	public ResponseEntity<List<TechDTO>> getByName(@RequestParam String name) {
+	public ResponseEntity<List<TechDTO>> getByName(
+			@RequestParam(required = false, defaultValue = "") String name
+		) {
 		List<TechDTO> techs = service.findByName(name);
 		return ResponseEntity.ok().body(techs);
 	}

@@ -6,6 +6,9 @@ public class ProductTargetMarketDTO {
 	private Long id;
 	private String name;
 
+	public ProductTargetMarketDTO() {
+	}
+
 	public ProductTargetMarketDTO(TargetMarket entity) {
 		this.id = entity.getId();
 		this.name = entity.getName();

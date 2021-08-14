@@ -6,6 +6,9 @@ public class ProductTechDTO {
 	private Long id;
 	private String name;
 
+	public ProductTechDTO() {
+	}
+
 	public ProductTechDTO(Tech entity) {
 		super();
 		this.id = entity.getId();

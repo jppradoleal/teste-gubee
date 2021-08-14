@@ -1,6 +1,7 @@
 package io.github.jppradoleal.dto;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 import io.github.jppradoleal.domain.Tech;
@@ -9,6 +10,9 @@ public class TechDTO {
 	private Long id;
 	private String name;
 	private List<ProductDTO> products;
+
+	public TechDTO() {
+	}
 
 	public TechDTO(Tech entity) {
 		super();
@@ -39,6 +43,23 @@ public class TechDTO {
 
 	public void setProducts(List<ProductDTO> products) {
 		this.products = products;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		TechDTO other = (TechDTO) obj;
+		return Objects.equals(id, other.id);
 	}
 
 }

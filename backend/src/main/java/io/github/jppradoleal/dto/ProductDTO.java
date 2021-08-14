@@ -12,6 +12,9 @@ public class ProductDTO {
 	private List<ProductTargetMarketDTO> targetMarket;
 	private List<ProductTechDTO> techs;
 	
+	public ProductDTO() {
+	}
+
 	public ProductDTO(Product entity) {
 		this.id = entity.getId();
 		this.name = entity.getName();

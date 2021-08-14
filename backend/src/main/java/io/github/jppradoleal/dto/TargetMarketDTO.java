@@ -10,6 +10,9 @@ public class TargetMarketDTO {
 	private String name;
 	private List<ProductDTO> products;
 
+	public TargetMarketDTO() {
+	}
+
 	public TargetMarketDTO(TargetMarket entity) {
 		this.id = entity.getId();
 		this.name = entity.getName();
