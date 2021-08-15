@@ -4,6 +4,11 @@ Teste para a vaga de BACKEND para a Gubee. Requer a criação de uma API para li
 A API deve listar produtos contendo Nome, Descrição, Mercado Alvo e Tecnologias utilizadas.
 Além disso, deve ser possível a filtragem de produtos por tecnologia, por exemplo: Se Java 10 e Kafka estiverem sendo filtrados, os produtos mostrados devem implementar as tecnologias Java 10, Kafka, ou Java 10 e Kafka.
 
+## Techs
+* Spring Boot + Hibernate
+* H2 Database/Postgres.
+* Angular.
+
 ## Instruções
 
 Execute os seguintes comandos no terminal.
