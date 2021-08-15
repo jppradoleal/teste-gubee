@@ -12,4 +12,6 @@ import io.github.jppradoleal.domain.Tech;
 public interface TechRepository extends JpaRepository<Tech, Long>{
 	@Query("select tech from Tech tech where tech.name like %?1%")
 	List<Tech> findByName(String name);
+	
+	List<Tech> findByNameIn(List<String> name);
 }

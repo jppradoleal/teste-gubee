@@ -61,14 +61,14 @@ class TechControllerTest {
 	@Test
 	void getOnTechsWithNameReturnTechWithName_test() throws Exception {
 		TechDTO tech = loadTech(1l, "Java");
-		when(service.findByName(Mockito.anyString())).thenReturn(loadTechList());
+		when(service.findByTech(Mockito.anyList())).thenReturn(loadTechList());
 
 		String name = tech.getName();
 		String productName = tech.getProducts().get(0).getName();
 
 		mvc.perform(
 				get("/techs")
-				.param("name", tech.getName())
+				.param("techNames", tech.getName(), "Kotlin")
 				.contentType(MediaType.APPLICATION_JSON))
 		.andExpect(status().isOk())
 		.andExpect(content().contentType(MediaType.APPLICATION_JSON))

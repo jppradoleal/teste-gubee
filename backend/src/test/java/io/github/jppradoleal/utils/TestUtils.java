@@ -6,7 +6,6 @@ import java.util.List;
 import io.github.jppradoleal.dto.ProductDTO;
 import io.github.jppradoleal.dto.ProductTargetMarketDTO;
 import io.github.jppradoleal.dto.ProductTechDTO;
-import io.github.jppradoleal.dto.TargetMarketDTO;
 
 public class TestUtils {
 

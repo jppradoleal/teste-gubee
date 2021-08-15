@@ -1,6 +1,8 @@
 package io.github.jppradoleal.controllers;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,10 +22,17 @@ public class TechController {
 	TechService service;
 	
 	@GetMapping()
-	public ResponseEntity<List<TechDTO>> getByName(
-			@RequestParam(required = false, defaultValue = "") String name
+	public ResponseEntity<List<TechDTO>> getByTech(
+			@RequestParam(required = false, defaultValue = "") String techNames
 		) {
-		List<TechDTO> techs = service.findByName(name);
+		List<String> formattedTechNames = Arrays.asList(techNames.split(","));
+		List<TechDTO> techs;
+		if(formattedTechNames.size() <= 1) {
+			String name = Optional.ofNullable(formattedTechNames.get(0)).orElse("");
+			techs = service.findByName(name);
+		} else {
+			techs = service.findByTech(formattedTechNames);			
+		}
 		return ResponseEntity.ok().body(techs);
 	}
 	

@@ -15,6 +15,6 @@ export class ApiService {
   }
   
   getProductsByTech(techName: string) {
-    return this.http.get<TechProduct[]>(`${this.apiUrl}/techs?name=${techName}`);
+    return this.http.get<TechProduct[]>(`${this.apiUrl}/techs?techNames=${techName}`);
   }
 }

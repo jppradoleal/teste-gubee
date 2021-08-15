@@ -1,3 +1,5 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { ApiService } from 'src/core/services/api.service';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -14,7 +16,9 @@ import { NgModule } from '@angular/core';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    FormsModule, 
+    ReactiveFormsModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

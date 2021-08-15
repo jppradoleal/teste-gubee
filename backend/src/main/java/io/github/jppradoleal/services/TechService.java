@@ -24,6 +24,12 @@ public class TechService {
 	}
 	
 	@Transactional
+	public List<TechDTO> findByTech(List<String> names) {
+		List<Tech> techs = repository.findByNameIn(names);
+		return techs.stream().map(e -> new TechDTO(e)).collect(Collectors.toList());
+	}
+	
+	@Transactional
 	public TechDTO findOne(Long id) {
 		Tech tech = repository.findById(id).orElseThrow();
 		return new TechDTO(tech);

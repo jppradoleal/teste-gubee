@@ -7,12 +7,23 @@
 </nav>
 <main>
   <div>
-    <input 
+    <div class="filters">
+      <input 
       type="search" 
       name="searchbox" 
       id="searchbox"
       placeholder="Busca por tecnologia" 
       (keyup)="fetch($event)">
+      <div class="dropdown">
+        <button class="dropdown-btn">Filtrar</button>
+        <form class="dropdown-content">
+          <fieldset *ngFor="let tech of techs">
+            <input type="checkbox" name="{{tech}}" id="{{tech}}" (change)="onChange(tech, $event.target)">
+            <label for="{{tech}}">{{tech}}</label>
+          </fieldset>
+        </form>
+      </div>
+    </div>
     <section class="card-group">
       <div *ngFor="let product of products">
         <app-card [product]="product" ></app-card>
